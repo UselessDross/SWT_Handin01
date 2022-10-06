@@ -5,8 +5,13 @@ using System.Text;
 
 namespace ChargingBox
 {
+    public class KeyReaderKeyReadEventArgs
+    {
+        public object? Key;
+    }
+
     public interface IKeyReader
     {
-        event System.EventHandler KeyRead;
+        event System.EventHandler<KeyReaderKeyReadEventArgs> KeyRead;
     }
 }

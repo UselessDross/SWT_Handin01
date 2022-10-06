@@ -13,9 +13,15 @@ namespace ChargingBox
         Error
     }
 
+    public class ChargerStateChangedEventArgs
+    {
+        public ChargerState Before;
+        public ChargerState After;
+    }
+
     public interface ICharger
     {
-        event System.EventHandler StateChanged;
+        event System.EventHandler<ChargerStateChangedEventArgs> StateChanged;
 
         ChargerState State { get; set; }
         bool IsConnected { get; set; }

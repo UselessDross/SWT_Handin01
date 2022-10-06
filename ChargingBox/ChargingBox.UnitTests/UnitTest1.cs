@@ -1,7 +1,7 @@
 namespace ChargingBox.UnitTests
 {
     /*
-     * To test Console.Writeline: Use Console.SetOut  -  Use StringWriter
+     * To test Console.Writeline, Use Console.SetOut  (Use StringWriter as the TextWriter)
      */
 
 
