@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="ChargingBox.IDoor">
+    <Position X="4.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oAAQCAAgAAAAIAAAAABAAAAAEAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>IDoor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ChargingBox.ICharger">
+    <Position X="6.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAABAAAAAAAAAAAAAAAAAIAAABAAAACA=</HashCode>
+      <FileName>ICharger.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ChargingBox.IKeyReader">
+    <Position X="8" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IKeyReader.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ChargingBox.IDisplay">
+    <Position X="9.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ChargingBox.ILogger">
+    <Position X="11.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ILogger.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
