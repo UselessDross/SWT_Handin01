@@ -12,13 +12,13 @@ namespace ChargingBox
 
     public interface IDoor
     {
-        event System.EventHandler<DoorOpenedEventArgs> Opened;
-        event System.EventHandler<DoorClosedEventArgs> Closed;
-        event System.EventHandler<DoorLockedEventArgs> Locked;
-        event System.EventHandler<DoorUnlockedEventArgs> Unlocked;
+        event System.EventHandler<DoorOpenedEventArgs>? Opened;
+        event System.EventHandler<DoorClosedEventArgs>? Closed;
+        event System.EventHandler<DoorLockedEventArgs>? Locked;
+        event System.EventHandler<DoorUnlockedEventArgs>? Unlocked;
 
-        bool IsOpen { get; set; }
-        bool IsLocked { get; set; }
+        bool IsOpen { get; }
+        bool IsLocked { get; }
 
         void Open();
         void Close();
