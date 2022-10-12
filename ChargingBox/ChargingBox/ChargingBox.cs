@@ -15,13 +15,14 @@ namespace ChargingBox
 
     public class ChargingBox
     {
-        public IDoor Door;
-        public ICharger Charger;
-        public IKeyReader KeyReader;
-        public IDisplay Display;
-        public ILogger Logger;
+        public IDoor Door { get; set; }
+        public ICharger Charger { get; set; }
+        public IKeyReader KeyReader { get; set; }
+        public IDisplay Display { get; set; }
+        public ILogger Logger { get; set; }
 
-        public ChargingBoxState State;
+        public ChargingBoxState State { get; set; }
+
         private object? _key;
 
         public ChargingBox(IDoor door, ICharger charger, IKeyReader keyReader, IDisplay display, ILogger logger)
@@ -85,10 +86,7 @@ namespace ChargingBox
         }
         private bool TryUnlock(object? key)
         {
-            bool keyMatch;
-            if (_key is null) keyMatch = key is null;
-            else keyMatch = _key.Equals(key);
-            if (keyMatch is false) return false;
+            if ((_key?.Equals(key) ?? key is null) is false) return false;
 
             Charger.Stop();
 
@@ -131,29 +129,19 @@ namespace ChargingBox
 
         private void UpdateDisplay()
         {
-            string message;
-            switch (State)
+            string message = State switch
             {
-                case ChargingBoxState.Available: message = "Available";
-                    break;
-                case ChargingBoxState.Locked:
-                    switch (Charger.State)
-                    {
-                        case ChargerState.Idle: message = "";
-                            break;
-                        case ChargerState.Charging: message = "Charging...";
-                            break;
-                        case ChargerState.FullyCharged: message = "Phone fully charged";
-                            break;
-                        default: message = "Error!";
-                            break;
-                    }
-                    break;
-                case ChargingBoxState.Unlocked: message = "Remember your phone!";
-                    break;
-                default: message = "Error!";
-                    break;
-            }
+                ChargingBoxState.Available => "Available",
+                ChargingBoxState.Locked => Charger.State switch
+                {
+                    ChargerState.Idle => "",
+                    ChargerState.Charging => "Charging...",
+                    ChargerState.FullyCharged => "Phone fully charged",
+                    _ => "Error!",
+                },
+                ChargingBoxState.Unlocked => "Remember your phone!",
+                _ => "Error!",
+            };
 
             Display.Display(message);
         }
