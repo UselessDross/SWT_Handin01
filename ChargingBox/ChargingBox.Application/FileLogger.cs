@@ -16,6 +16,7 @@ namespace ChargingBox.Application
         public void LogLock(bool lockState, object key, string filepath)
         {
             Filepath = filepath;
+            LogLock(lockState, key, DateTime.Now);
         }
 
         public void LogLock(bool lockState, object key, DateTime time)
@@ -35,9 +36,9 @@ namespace ChargingBox.Application
         }
         public void LogLock(bool lockState, object key) => LogLock(lockState, key, DateTime.Now);
 
-        public string GetLogString(bool lockState, object key, DateTime time)
+        public static string GetLogString(bool lockState, object key, DateTime time)
             => (lockState ? "Locked" : "Unlocked")
                 + $" with key {key} at {time:u}";
-        public string GetLogString(bool lockState, object key) => GetLogString(lockState, key, DateTime.Now);
+        public static string GetLogString(bool lockState, object key) => GetLogString(lockState, key, DateTime.Now);
     }
 }
