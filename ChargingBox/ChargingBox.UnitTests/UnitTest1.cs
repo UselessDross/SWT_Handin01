@@ -96,6 +96,8 @@ namespace ChargingBox.UnitTests
         }
 
         [TestCase(1900, 10, 01, "1900-10-01 00:00:00Z")]
+        [TestCase(2008, 11, 01, "2008-11-01 00:00:00Z")]
+        [TestCase(1927, 02, 01, "1927-02-01 00:00:00Z")]
         public void TestIs_LogLock_withTimespecification_Correct(int YYYY,int mm,int dd, string result)
         {
             // Arrange
