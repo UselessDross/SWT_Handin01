@@ -26,7 +26,7 @@ namespace ChargingBox.Application
             if (File.Exists(Filepath))
             {
                 using FileStream stream = new(Filepath, FileMode.Append, FileAccess.Write);
-                stream.Write(text);
+                stream.Write(text);     
             }
             else
             {
