@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChargingBox.UnitTests", "Ch
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChargingBox.Application", "ChargingBox.Application\ChargingBox.Application.csproj", "{C3AB6922-C940-495A-9E29-7C13880E703D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChargingBox.Implementation2", "ChargingBox.Implementation2\ChargingBox.Implementation2.csproj", "{F775D3D6-C3D8-44F4-8C19-0C0AF1371167}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{C3AB6922-C940-495A-9E29-7C13880E703D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3AB6922-C940-495A-9E29-7C13880E703D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3AB6922-C940-495A-9E29-7C13880E703D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F775D3D6-C3D8-44F4-8C19-0C0AF1371167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F775D3D6-C3D8-44F4-8C19-0C0AF1371167}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F775D3D6-C3D8-44F4-8C19-0C0AF1371167}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F775D3D6-C3D8-44F4-8C19-0C0AF1371167}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
