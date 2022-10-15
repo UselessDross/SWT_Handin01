@@ -67,7 +67,7 @@ namespace ChargingBox.UnitTests
             //act
 
             if (a) { uut.Open();   }
-            
+             
 
             if (b) { uut.Lock();   }
             
