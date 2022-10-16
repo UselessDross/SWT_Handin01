@@ -15,7 +15,7 @@ namespace ChargingBox.UnitTests
      */
     public class Tests
     {
-        public string path_ = "C:\\semesterFolders\\SWT\\SWTLabEx\\Lektion6\\ChargingBox\\LogTest.txt";
+        public string path_ = "C:LogTest.txt";
         FileLogger uut;
         [SetUp]
         public void Setup()
@@ -23,7 +23,7 @@ namespace ChargingBox.UnitTests
             uut = new FileLogger(path_);            
         }
 
-        [TestCase("C:\\semesterFolders\\SWT\\SWTLabEx\\Lektion6\\ChargingBox\\LogTest.txt")]
+        [TestCase("C:LogTest.txt")]
         public void TestIs_FilePath_Correct(string result)
         {
             Assert.That(uut.Filepath, Is.EqualTo(result));
