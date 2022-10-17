@@ -10,7 +10,7 @@ namespace ChargingBox
     {
         public void Display(string text)
         {
-            throw new NotImplementedException();
+          Console.WriteLine(text);
         }
     }
 }

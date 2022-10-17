@@ -8,8 +8,8 @@ namespace ChargingBox.UnitTests.MockCLasses
 {
     internal class MockDoor : IDoor
     {
-        public bool IsOpen { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool IsLocked { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool IsOpen { get; set; }
+        public bool IsLocked { get; set; }
 
         public event EventHandler<DoorOpenedEventArgs> Opened;
         public event EventHandler<DoorClosedEventArgs> Closed;

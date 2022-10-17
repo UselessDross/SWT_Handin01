@@ -15,12 +15,33 @@ namespace ChargingBox.UnitTests.MockCLasses
 
         public void Start()
         {
-            Console.WriteLine("charging");
+            StateChanged.Invoke(this, new ChargerStateChangedEventArgs());
+            State = ChargerState.Idle;
+
         }
 
         public void Stop()
         {
-            throw new NotImplementedException();
+            State = ChargerState.FullyCharged;
+        }
+
+        public void changeIsConnected(bool newState)
+        {
+            IsConnected = newState;
+        }
+
+        public void OnMockStateCHange(ChargerStateChangedEventArgs e)
+        {
+            StateChanged?.Invoke(this, e);
+        }
+
+        public void changeStateEvent(ChargerState state_, ChargerState after_, ChargerState before_)
+        {
+            State = state_;
+            ChargerStateChangedEventArgs eventArg = new ChargerStateChangedEventArgs();
+            eventArg.After = after_;
+            eventArg.Before = before_;
+            StateChanged.Invoke(this, eventArg);
         }
     }
 }

@@ -46,10 +46,10 @@ namespace ChargingBox
                 case ChargerState.Error: State = ChargingBoxState.Error; break;
                 default: break;
             }
-            charger.StateChanged += HandleChargerStateChanged;
+            charger.StateChanged += HandleChargerStateChanged; //Check [v]
             // KeyReader
             KeyReader = keyReader;
-            KeyReader.KeyRead += HandleKeyRead;
+            KeyReader.KeyRead += HandleKeyRead;  //Check [v]
             // Display
             Display = display;
             UpdateDisplay();
@@ -70,7 +70,7 @@ namespace ChargingBox
         }
         private bool Trylock(object? key)
         {
-            if (State != ChargingBoxState.Available) return false;
+            if (State != ChargingBoxState.Available) return false; //can't see how this could happen.
             if (Door.IsOpen) return false;
             if (Charger.IsConnected is false) return false;
 
