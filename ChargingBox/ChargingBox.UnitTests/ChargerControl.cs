@@ -25,6 +25,38 @@ namespace ChargingBox.UnitTests
             };
         }
 
+        [Test]
+        public void State_Set_State()
+        {
+            _charger.State = ChargerState.FullyCharged;
+
+            Assert.That(_charger.State, Is.EqualTo(ChargerState.FullyCharged));
+        }
+        [Test]
+        public void State_Set_StateChanged_Count()
+        {
+            _charger.State = ChargerState.FullyCharged;
+
+            Assert.That(_receivedArgs, Has.Count.EqualTo(1));
+        }
+        [Test]
+        public void State_Set_StateChanged_Before()
+        {
+            _charger.State = ChargerState.FullyCharged;
+            _charger.State = ChargerState.Idle;
+
+            Assert.That(_receivedArgs, Has.Count.EqualTo(2));
+            Assert.That(_receivedArgs[1].args.Before, Is.EqualTo(ChargerState.FullyCharged));
+        }
+        [Test]
+        public void State_Set_StateChanged_After()
+        {
+            _charger.State = ChargerState.FullyCharged;
+
+            Assert.That(_receivedArgs, Has.Count.EqualTo(1));
+            Assert.That(_receivedArgs[0].args.After, Is.EqualTo(ChargerState.FullyCharged));
+        }
+
         private void Start_Setup()
         {
             _charger.IsConnected = true;
