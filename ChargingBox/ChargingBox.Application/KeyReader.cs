@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChargingBox.Implementation2
+namespace ChargingBox.Application
 {
     public class KeyReader : IKeyReader
     {
