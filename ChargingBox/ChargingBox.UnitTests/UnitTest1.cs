@@ -77,7 +77,7 @@ namespace ChargingBox.UnitTests
             //ACT
             if (a == "DECEMBER")
             {
-                new FileLogger();
+                File.Delete(uut.Filepath);
             }
 
             System.IO.File.WriteAllText(path_, string.Empty);
