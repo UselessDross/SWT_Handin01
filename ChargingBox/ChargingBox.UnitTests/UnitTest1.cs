@@ -79,8 +79,8 @@ namespace ChargingBox.UnitTests
             {
                 File.Delete(uut.Filepath);
             }
+            else System.IO.File.WriteAllText(path_, string.Empty);
 
-            System.IO.File.WriteAllText(path_, string.Empty);
             uut.LogLock(false, a);
             try
             {
