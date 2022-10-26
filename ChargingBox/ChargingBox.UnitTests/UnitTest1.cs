@@ -67,6 +67,7 @@ namespace ChargingBox.UnitTests
                   ChargerState.Idle,
                   ChargingBoxState.Error,
                   ChargingBoxState.Error)]
+
         public void HandleChargerStateChanged_GivesResultCorrect(ChargerState ChargState_, 
                                                                  ChargerState AfterState_, 
                                                                  ChargerState BeforState_,
@@ -76,6 +77,11 @@ namespace ChargingBox.UnitTests
             //ARRANGE
             MockCharger charger_ = new MockCharger();
             charger_.State = ChargerState.Idle;
+            if ( result_ == ChargingBoxState.Locked)
+            {
+            charger_.State = ChargerState.Charging;
+
+            }
 
             //ACT
             uut = new ChargingBox(new MockDoor(),
@@ -89,6 +95,8 @@ namespace ChargingBox.UnitTests
             //ASSERT
             Assert.That(uut.State, Is.EqualTo(result_));
         }
+
+
 
 
         [TestCase(true , false, ChargingBoxState.Available, ChargingBoxState.Locked)]
@@ -166,8 +174,8 @@ namespace ChargingBox.UnitTests
         [TestCase(ChargingBoxState.Unlocked, ChargerState.Idle,         "Available\r\nRemember your phone!\r\n")]
         [TestCase(ChargingBoxState.Error,    ChargerState.Idle,         "Available\r\nError!\r\n")]
         public void UpdateDisplay_DisplaysCorrect(ChargingBoxState uutBaseState, 
-                                                  ChargerState chargerState_,
-                                                  string result_)
+                                                  ChargerState     chargerState_,
+                                                  string           result_)
         {
             //ARRANGE
             var stringWriter = new StringWriter();
@@ -219,9 +227,6 @@ namespace ChargingBox.UnitTests
                                    BindingFlags.NonPublic | BindingFlags.Instance)
                        .Invoke(uut, null);
             }
-
-
-
 
             //ASSERT
             Assert.That(stringWriter.ToString(), Is.EqualTo(result_));
