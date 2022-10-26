@@ -37,18 +37,23 @@ namespace ChargingBox.Implementation
 
         public void Start()
         {
-            int phoneTemp = 0;
-            State = ChargerState.Charging;
-            while ( State == ChargerState.Charging)
+            if (IsConnected == true)
             {
-                ChargingMethod(phoneTemp);
-                if (phoneTemp > 5 || phoneTemp <= 500 && IsConnected == true)
+
+
+                int phoneTemp = 0;
+                State = ChargerState.Charging;
+                while (State == ChargerState.Charging)
                 {
-                    State = ChargerState.FullyCharged;
-                }
-                else if (phoneTemp > 500 || IsConnected == false)
-                {
-                    State = ChargerState.Error;
+                    ChargingMethod(phoneTemp);
+                    if (phoneTemp > 5 || phoneTemp <= 500 && IsConnected == true)
+                    {
+                        State = ChargerState.FullyCharged;
+                    }
+                    else if (phoneTemp > 500 || IsConnected == false)
+                    {
+                        State = ChargerState.Error;
+                    }
                 }
             }
         }
