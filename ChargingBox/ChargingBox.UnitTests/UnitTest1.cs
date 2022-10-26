@@ -133,9 +133,10 @@ namespace ChargingBox.UnitTests
         }
 
       
-        [TestCase("Base_key", ChargingBoxState.Available, "Base_key", ChargingBoxState.Available)]
+        [TestCase("Base_key", ChargingBoxState.Available, "Base_key",    ChargingBoxState.Available)]
         [TestCase("Base_key", ChargingBoxState.Available, "notBase_key", ChargingBoxState.Locked)]
-        [TestCase("Base_key", ChargingBoxState.Available, null, ChargingBoxState.Locked)]
+        [TestCase("Base_key", ChargingBoxState.Available, null,          ChargingBoxState.Locked)]
+        [TestCase("Base_key", ChargingBoxState.Error,     null,          ChargingBoxState.Error)]
         public void TryUnlock_GivesCorrectResult(object KeyUsedToLockBox,
                                                  ChargingBoxState uutBaseState,
                                                  object KeyUsedToUnLockBox,
