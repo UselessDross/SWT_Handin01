@@ -22,8 +22,8 @@ namespace ChargingBox.Implementation
             {
                 ChargerStateChangedEventArgs newArg = new ChargerStateChangedEventArgs();
                 newArg.Before = _chargerState;
-                newArg.After = _chargerState; 
                 _chargerState = value;
+                newArg.After = _chargerState; 
                 StateChanged?.Invoke(this, newArg);
             } 
         }
@@ -55,13 +55,10 @@ namespace ChargingBox.Implementation
 
         public void Stop()
         {
-            IsConnected = false;
+            //IsConnected = false;
             State = ChargerState.Idle;
         }
 
-
-        // thanks to this video. 
-        //https://www.youtube.com/watch?v=gYC-9PUGwDI
 
 
     }
