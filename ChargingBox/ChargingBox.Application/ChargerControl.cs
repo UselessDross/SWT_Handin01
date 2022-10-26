@@ -50,10 +50,6 @@ namespace ChargingBox.Implementation
                     {
                         State = ChargerState.FullyCharged;
                     }
-                    else if (phoneTemp > 500 || IsConnected == false)
-                    {
-                        State = ChargerState.Error;
-                    }
                 }
             }
         }
