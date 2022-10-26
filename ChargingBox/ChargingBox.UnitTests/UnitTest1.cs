@@ -43,7 +43,7 @@ namespace ChargingBox.UnitTests
             
             //ACT
             System.IO.File.WriteAllText(path_, string.Empty);
-            uut.LogLock(true,a,path_);
+            uut.LogLock(true,a);
             try
             {
                 reader = new StreamReader(uut.Filepath);
@@ -75,7 +75,7 @@ namespace ChargingBox.UnitTests
 
             //ACT
             System.IO.File.WriteAllText(path_, string.Empty);
-            uut.LogLock(false, a, path_);
+            uut.LogLock(false, a);
             try
             {
                 reader = new StreamReader(uut.Filepath);

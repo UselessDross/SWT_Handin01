@@ -8,15 +8,9 @@ namespace ChargingBox.Application
     {
         public string Filepath { get; set; }
 
-        public FileLogger(string filepath)
+        public FileLogger(string filepath = "KeyLog.txt")
         {
             Filepath = filepath;
-        }
-
-        public void LogLock(bool lockState, object key, string filepath)
-        {
-            Filepath = filepath;
-            LogLock(lockState, key, DateTime.Now);
         }
 
         public void LogLock(bool lockState, object key, DateTime time)
