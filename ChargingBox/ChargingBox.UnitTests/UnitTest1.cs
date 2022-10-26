@@ -66,6 +66,7 @@ namespace ChargingBox.UnitTests
         [TestCase("ALPHA", "Unlocked with key ALPHA at")]
         [TestCase("BRAVO", "Unlocked with key BRAVO at")]
         [TestCase("CHARLI", "Unlocked with key CHARLI at")]
+        [TestCase("DECEMBER", "Unlocked with key DECEMBER at")]
         public void TestIs_UnLogLock_Correct(string a, string result)
         {
             // Arrange
@@ -74,6 +75,11 @@ namespace ChargingBox.UnitTests
 
 
             //ACT
+            if (a == "DECEMBER")
+            {
+                new FileLogger();
+            }
+
             System.IO.File.WriteAllText(path_, string.Empty);
             uut.LogLock(false, a);
             try
