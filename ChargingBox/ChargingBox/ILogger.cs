@@ -7,6 +7,6 @@ namespace ChargingBox
 {
     public interface ILogger
     {
-        void LogLock(bool lockState, object key, string filepath);
+        void LogLock(bool lockState, object key);
     }
 }
