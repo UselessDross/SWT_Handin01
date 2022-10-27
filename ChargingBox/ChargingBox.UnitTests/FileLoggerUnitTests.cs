@@ -13,7 +13,7 @@ namespace ChargingBox.UnitTests
     /*
      * To test Console.Writeline, Use Console.SetOut  (Use StringWriter as the TextWriter)
      */
-    public class Tests
+    public class FileLoggerUnitTests
     {
         public string path_ = "LogTest.txt";
         FileLogger uut;
