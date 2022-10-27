@@ -10,23 +10,15 @@ namespace ChargingBox.ConsoleImp
     {
         public event EventHandler<KeyReaderKeyReadEventArgs>? KeyRead;
 
-        public void OnKeyRead(KeyReaderKeyReadEventArgs e)
+        public void ReadKey(object? key)
         {
-            KeyRead?.Invoke(this, e);
+            KeyRead?.Invoke(this, new()
+            {
+                Key = key
+            });
         }
 
     }
-    /*
-    public class something
-    {
-        void some(object o, KeyReaderKeyReadEventArgs e) { /*busniss logic }
-        public something(IKeyReader reader)
-        {
-            reader.KeyRead += some;
-        } 
-
-    }
-*/
 
 }
 

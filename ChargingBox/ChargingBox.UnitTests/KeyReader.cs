@@ -26,20 +26,14 @@ namespace ChargingBox.UnitTests
         [Test]
         public void OnKeyRead_Count()
         {
-            _keyReader.OnKeyRead(new()
-            {
-
-            });
+            _keyReader.ReadKey(1);
 
             Assert.That(_receivedArgs, Has.Count.EqualTo(1));
         }
         [Test]
         public void OnKeyRead_Sender()
         {
-            _keyReader.OnKeyRead(new()
-            {
-
-            });
+            _keyReader.ReadKey(1);
 
             Assert.That(_receivedArgs, Has.Count.GreaterThanOrEqualTo(1));
             Assert.That(_receivedArgs[0].sender, Is.EqualTo(_keyReader));
@@ -49,10 +43,7 @@ namespace ChargingBox.UnitTests
         [TestCase(null)]
         public void OnKeyRead_Key(object? key)
         {
-            _keyReader.OnKeyRead(new()
-            {
-                Key = key
-            });
+            _keyReader.ReadKey(key);
 
             Assert.That(_receivedArgs, Has.Count.GreaterThanOrEqualTo(1));
             Assert.That(_receivedArgs[0].args.Key, Is.EqualTo(key));
