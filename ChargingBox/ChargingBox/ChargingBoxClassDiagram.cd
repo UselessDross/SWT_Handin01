@@ -4,9 +4,9 @@
     <Position X="8.094" Y="5.562" Height="1.896" Width="1.7" />
   </Comment>
   <Class Name="ChargingBox.ChargingBox">
-    <Position X="8" Y="2.5" Width="1.5" />
+    <Position X="2.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAACAAAAIAAAAAACCIAQAAAAAQQAABAAABBAABAAA=</HashCode>
       <FileName>ChargingBox.cs</FileName>
     </TypeIdentifier>
   </Class>
