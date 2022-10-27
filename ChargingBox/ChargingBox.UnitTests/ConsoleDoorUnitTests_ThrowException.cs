@@ -1,5 +1,3 @@
-using ChargingBox.Application;
-
 namespace ChargingBox.UnitTests
 {
     /*

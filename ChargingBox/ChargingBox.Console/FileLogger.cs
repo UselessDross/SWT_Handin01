@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ChargingBox.Application
+namespace ChargingBox.ConsoleImp
 {
     public class FileLogger : ILogger
     {

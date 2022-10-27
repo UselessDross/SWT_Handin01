@@ -1,4 +1,3 @@
-using ChargingBox.Application;
 using Microsoft.VisualStudio.TestPlatform.Utilities.Helpers;
 using NSubstitute.Callbacks;
 using System;

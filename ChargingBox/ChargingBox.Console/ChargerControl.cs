@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChargingBox.Implementation
+namespace ChargingBox.ConsoleImp
 {
     public class ChargerControl : ICharger
     {

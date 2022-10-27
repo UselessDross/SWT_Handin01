@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ChargingBox.Application\ChargingBox.Application.csproj" />
+    <ProjectReference Include="..\ChargingBox.Console\ChargingBox.ConsoleImp.csproj" />
     <ProjectReference Include="..\ChargingBox\ChargingBox.csproj" />
   </ItemGroup>
 
