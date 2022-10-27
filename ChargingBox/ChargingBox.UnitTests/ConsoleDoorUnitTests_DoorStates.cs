@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChargingBox.UnitTests
 {
-    internal class UnitTest_doorSTates
+    internal class ConsoleDoorUnitTests_DoorStates
     {
         ConsoleDoor uut;
         [SetUp]
