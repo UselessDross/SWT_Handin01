@@ -9,7 +9,7 @@ namespace ChargingBox.UnitTests
      */
 
 
-    public class Tests
+    public class ChargingBoxUnitTests
     {
         ChargingBox uut;
         [SetUp]
