@@ -9,7 +9,7 @@ namespace ChargingBox.Implementation
 {
     public class ChargerControl : ICharger
     {
-        public event EventHandler<ChargerStateChangedEventArgs> StateChanged;
+        public event EventHandler<ChargerStateChangedEventArgs>? StateChanged;
         private ChargerState _chargerState;
         public bool IsConnected { get ; set ; }
 

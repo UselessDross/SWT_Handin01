@@ -13,7 +13,7 @@ namespace ChargingBox.Application
             Filepath = filepath;
         }
 
-        public void LogLock(bool lockState, object key, DateTime time)
+        public void LogLock(bool lockState, object? key, DateTime time)
         {
             byte[] text = new UTF8Encoding(true).GetBytes(GetLogString(lockState, key, time));
 
@@ -28,11 +28,11 @@ namespace ChargingBox.Application
                 stream.Write(text, 0, text.Length);
             }
         }
-        public void LogLock(bool lockState, object key) => LogLock(lockState, key, DateTime.Now);
+        public void LogLock(bool lockState, object? key) => LogLock(lockState, key, DateTime.Now);
 
-        public static string GetLogString(bool lockState, object key, DateTime time)
+        public static string GetLogString(bool lockState, object? key, DateTime time)
             => (lockState ? "Locked" : "Unlocked")
-                + $" with key {key} at {time:u}";
-        public static string GetLogString(bool lockState, object key) => GetLogString(lockState, key, DateTime.Now);
+                + $" with key {key ?? "null"} at {time:u}";
+        public static string GetLogString(bool lockState, object? key) => GetLogString(lockState, key, DateTime.Now);
     }
 }

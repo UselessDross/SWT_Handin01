@@ -13,8 +13,16 @@ namespace ChargingBox.Application
         public event EventHandler<DoorLockedEventArgs>? Locked;
         public event EventHandler<DoorUnlockedEventArgs>? Unlocked;
 
-        public bool IsOpen => _isOpen;
-        public bool IsLocked => _isLocked;
+        public bool IsOpen
+        {
+            get => _isOpen;
+            set => _isOpen = value;
+        }
+        public bool IsLocked
+        {
+            get => _isLocked;
+            set => _isLocked = value;
+        }
 
         private bool _isOpen;
         private bool _isLocked;

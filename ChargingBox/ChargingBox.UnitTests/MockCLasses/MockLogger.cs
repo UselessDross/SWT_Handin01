@@ -8,7 +8,7 @@ namespace ChargingBox.UnitTests.MockCLasses
 {
     internal class MockLogger : ILogger
     {
-        public void LogLock(bool lockState, object key, string filepath)
+        public void LogLock(bool lockState, object? key)
         {
             
         }

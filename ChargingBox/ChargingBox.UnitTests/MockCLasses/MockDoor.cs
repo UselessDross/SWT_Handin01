@@ -11,10 +11,10 @@ namespace ChargingBox.UnitTests.MockCLasses
         public bool IsOpen { get; set; }
         public bool IsLocked { get; set; }
 
-        public event EventHandler<DoorOpenedEventArgs> Opened;
-        public event EventHandler<DoorClosedEventArgs> Closed;
-        public event EventHandler<DoorLockedEventArgs> Locked;
-        public event EventHandler<DoorUnlockedEventArgs> Unlocked;
+        public event EventHandler<DoorOpenedEventArgs>? Opened;
+        public event EventHandler<DoorClosedEventArgs>? Closed;
+        public event EventHandler<DoorLockedEventArgs>? Locked;
+        public event EventHandler<DoorUnlockedEventArgs>? Unlocked;
 
         public void Close()
         {

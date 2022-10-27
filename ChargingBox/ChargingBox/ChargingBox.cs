@@ -79,7 +79,7 @@ namespace ChargingBox
 
             Charger.Start();
 
-            Logger.LogLock(true, key, "LogFile.txt");
+            Logger.LogLock(true, key);
 
             UpdateDisplay();
             return true;
@@ -93,7 +93,7 @@ namespace ChargingBox
             State = ChargingBoxState.Available;
             _key = null;
 
-            Logger.LogLock(false, key, "LogFile.txt");
+            Logger.LogLock(false, key);
 
             UpdateDisplay();
             return true;

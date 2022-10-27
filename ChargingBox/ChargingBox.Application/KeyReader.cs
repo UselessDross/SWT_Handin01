@@ -8,7 +8,7 @@ namespace ChargingBox.Application
 {
     public class KeyReader : IKeyReader
     {
-        public event EventHandler<KeyReaderKeyReadEventArgs> KeyRead;
+        public event EventHandler<KeyReaderKeyReadEventArgs>? KeyRead;
 
         public void OnKeyRead(KeyReaderKeyReadEventArgs e)
         {
