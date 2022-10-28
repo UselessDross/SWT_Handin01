@@ -8,7 +8,7 @@ namespace ChargingBox.UnitTests
 
     public class ConsoleDoorUnitTests_ThrowException
     {
-        IDoor uut;
+        ConsoleDoor uut;
         [SetUp]
         public void Setup()
         {

@@ -17,11 +17,9 @@ namespace ChargingBox
         event System.EventHandler<DoorLockedEventArgs>? Locked;
         event System.EventHandler<DoorUnlockedEventArgs>? Unlocked;
 
-        bool IsOpen { get; set; }
-        bool IsLocked { get; set; }
+        bool IsOpen { get; }
+        bool IsLocked { get; }
 
-        void Open();
-        void Close();
         void Unlock();
         void Lock();
     }

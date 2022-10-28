@@ -46,10 +46,10 @@ namespace ChargingBox
                 case ChargerState.Error: State = ChargingBoxState.Error; break;
                 default: break;
             }
-            charger.StateChanged += HandleChargerStateChanged; //Check [v]
+            charger.StateChanged += HandleChargerStateChanged;
             // KeyReader
             KeyReader = keyReader;
-            KeyReader.KeyRead += HandleKeyRead;  //Check [v]
+            KeyReader.KeyRead += HandleKeyRead;
             // Display
             Display = display;
             UpdateDisplay();
@@ -70,12 +70,12 @@ namespace ChargingBox
         }
         private bool Trylock(object? key)
         {
-            if (State != ChargingBoxState.Available) return false; //can't see how this could happen.
+            if (State != ChargingBoxState.Available) return false;
             if (Door.IsOpen) return false;
             if (Charger.IsConnected is false) return false;
 
             State = ChargingBoxState.Locked;
-            Door.Lock(); // added the locekd method because the door didn't get locked when the box got locked.
+            Door.Lock();
             _key = key;
 
             Charger.Start();
@@ -91,7 +91,7 @@ namespace ChargingBox
 
             Charger.Stop();
 
-            Door.Unlock(); // added the coresopneding unlocked method.
+            Door.Unlock();
             State = ChargingBoxState.Available;
             _key = null;
 
@@ -111,7 +111,6 @@ namespace ChargingBox
             switch (State)
             {
                 case ChargingBoxState.Available:
-                    break; /*ADDED*/
                 case ChargingBoxState.Locked:
                     break;
                 case ChargingBoxState.Unlocked:
@@ -127,7 +126,7 @@ namespace ChargingBox
                     break;
             }
 
-            UpdateDisplay(); // so for some reason this gets called whenever the charinger state changes.
+            UpdateDisplay();
         }
 
         private void UpdateDisplay()

@@ -16,7 +16,7 @@ namespace ChargingBox.ConsoleImp
         // vise "fjern telefon"
         public void Display(string text)
         {
-            Console.WriteLine(text);
+            Console.WriteLine("Display: " + text);
         }
     }
 }

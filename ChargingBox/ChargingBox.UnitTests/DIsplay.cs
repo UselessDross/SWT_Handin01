@@ -19,9 +19,9 @@ namespace ChargingBox.UnitTests
             _display = new DIsplay();
         }
 
-        [TestCase("Test ABC", "Test ABC\r\n")]
-        [TestCase("123 #^$#", "123 #^$#\r\n")]
-        [TestCase("\n test abb \\n", "\n test abb \\n\r\n")]
+        [TestCase("Test ABC", "Display: Test ABC\r\n")]
+        [TestCase("123 #^$#", "Display: 123 #^$#\r\n")]
+        [TestCase("\n test abb \\n", "Display: \n test abb \\n\r\n")]
         public void Display(string input, string expected)
         {
             _display.Display(input);

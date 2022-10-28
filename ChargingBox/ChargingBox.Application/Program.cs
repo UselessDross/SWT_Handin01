@@ -27,7 +27,7 @@ keyReader.ReadKey(KEY);
 
 Console.WriteLine("======================================");
 keyReader.ReadKey(KEY);
-Box.Door.Open();
-Box.Charger.IsConnected = false;
+Door.Open();
+charControl.IsConnected = false;
 
 

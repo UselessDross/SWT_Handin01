@@ -24,7 +24,7 @@ namespace ChargingBox.UnitTests
             ICharger charger_ = new MockCharger();
             charger_.State=ChargerState.Error;
 
-            IDoor door_ = new MockDoor();
+            MockDoor door_ = new MockDoor();
             door_.IsLocked = false;
            
            //ACT
@@ -110,19 +110,20 @@ namespace ChargingBox.UnitTests
         {
             //ARRANGE
             MockKeyReader keyReader_ = new MockKeyReader();
-            
-            
+
+
 
 
             //ACT
-            uut = new ChargingBox(new MockDoor(),
+            MockDoor door_ = new MockDoor();
+            uut = new ChargingBox(door_,
                                   new MockCharger(),
                                   keyReader_,
                                   new MockDisplay(),
                                   new MockLogger());
             uut.State = uutBaseState;
             uut.Charger.IsConnected = connection;
-            uut.Door.IsOpen = Door;
+            door_.IsOpen = Door;
 
 
             keyReader_.changeStateEvent();
@@ -143,14 +144,15 @@ namespace ChargingBox.UnitTests
                                                  ChargingBoxState result_)
         {
             //ARRANGE
+            MockDoor door_ = new MockDoor();
             MockKeyReader keyReader_ = new MockKeyReader();
-            uut = new ChargingBox(new MockDoor(),
+            uut = new ChargingBox(door_,
                                   new MockCharger(),
                                   keyReader_,
                                   new MockDisplay(),
                                   new MockLogger());
             uut.Charger.IsConnected = true;
-            uut.Door.IsOpen = false;
+            door_.IsOpen = false;
             keyReader_.change_Key(KeyUsedToLockBox);
             uut.State = uutBaseState;
             keyReader_.changeStateEvent();
@@ -181,10 +183,11 @@ namespace ChargingBox.UnitTests
             //ARRANGE
             var stringWriter = new StringWriter();
             Console.SetOut(stringWriter);
+            MockDoor door_ = new MockDoor();
             MockCharger   charger_   = new MockCharger();
             MockKeyReader keyReader_ = new MockKeyReader();
 
-            uut = new ChargingBox(new MockDoor(),
+            uut = new ChargingBox(door_,
                                   charger_,
                                   keyReader_,
                                   new MockDisplay(),
@@ -198,7 +201,7 @@ namespace ChargingBox.UnitTests
             {
                 uut.State = ChargingBoxState.Locked;
                 uut.Charger.IsConnected = true;
-                uut.Door.IsOpen = false;
+                door_.IsOpen = false;
                 keyReader_.change_Key("PlaceHolderKey");
                 keyReader_.changeStateEvent();
             }
@@ -206,7 +209,7 @@ namespace ChargingBox.UnitTests
             {
                 uut.State = ChargingBoxState.Available;
                 uut.Charger.IsConnected = true;
-                uut.Door.IsOpen = false;
+                door_.IsOpen = false;
                 keyReader_.change_Key("PlaceHolderKey");
                 keyReader_.changeStateEvent();
             }
