@@ -75,6 +75,7 @@ namespace ChargingBox
             if (Charger.IsConnected is false) return false;
 
             State = ChargingBoxState.Locked;
+            Door.Lock(); // added the locekd method because the door didn't get locked when the box got locked.
             _key = key;
 
             Charger.Start();
@@ -90,6 +91,7 @@ namespace ChargingBox
 
             Charger.Stop();
 
+            Door.Unlock(); // added the coresopneding unlocked method.
             State = ChargingBoxState.Available;
             _key = null;
 
@@ -109,6 +111,7 @@ namespace ChargingBox
             switch (State)
             {
                 case ChargingBoxState.Available:
+                    break; /*ADDED*/
                 case ChargingBoxState.Locked:
                     break;
                 case ChargingBoxState.Unlocked:
@@ -124,7 +127,7 @@ namespace ChargingBox
                     break;
             }
 
-            UpdateDisplay();
+            UpdateDisplay(); // so for some reason this gets called whenever the charinger state changes.
         }
 
         private void UpdateDisplay()

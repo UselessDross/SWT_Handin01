@@ -29,9 +29,9 @@ namespace ChargingBox.ConsoleImp
         }
     
 
-        private int ChargingMethod(int Phone)
+        private  int ChargingMethod(int  Phone)
         {
-            return Phone + 1;
+            return  Phone + 1;
         }
 
 
@@ -42,14 +42,14 @@ namespace ChargingBox.ConsoleImp
 
 
                 int phoneTemp = 0;
-                State = ChargerState.Charging;
+                State = ChargerState.Charging; // for some reason it seems whenever state in charingCOntorler class changes the stahe of the box gets printed out.
                 while (State == ChargerState.Charging)
                 {
-                    ChargingMethod(phoneTemp);
-                    if (phoneTemp > 5 || phoneTemp <= 500 && IsConnected == true)
+                    phoneTemp = ChargingMethod( phoneTemp);
+                    if ((phoneTemp > 5 && phoneTemp <= 500) && IsConnected == true)
                     {
                         State = ChargerState.FullyCharged;
-                    }
+                    }//avaliable gets printed around here
                 }
             }
         }
