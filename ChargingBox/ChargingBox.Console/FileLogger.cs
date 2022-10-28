@@ -33,6 +33,5 @@ namespace ChargingBox.ConsoleImp
         public static string GetLogString(bool lockState, object? key, DateTime time)
             => (lockState ? "Locked" : "Unlocked")
                 + $" with key {key ?? "null"} at {time:u}";
-        public static string GetLogString(bool lockState, object? key) => GetLogString(lockState, key, DateTime.Now);
     }
 }

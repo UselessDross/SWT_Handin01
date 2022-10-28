@@ -134,6 +134,12 @@ namespace ChargingBox.UnitTests
             Assert.That(data_, Is.EqualTo(result));
         }
 
-
+        [TestCase(true, "ALPHA", 1900, 10, 01, "Locked with key ALPHA at 1900-10-01 00:00:00Z")]
+        [TestCase(false, "BRAVO", 2008, 11, 01, "Unlocked with key BRAVO at 2008-11-01 00:00:00Z")]
+        [TestCase(true, "CHARLI", 1927, 02, 01, "Locked with key CHARLI at 1927-02-01 00:00:00Z")]
+        public void TestIs_GetLogString_withTimespecification_Correct(bool lockState, object? key, int YYYY, int mm, int dd, string expected)
+        {
+            Assert.That(FileLogger.GetLogString(lockState, key, new(YYYY, mm, dd)), Is.EqualTo(expected));
+        }
     }
 }
